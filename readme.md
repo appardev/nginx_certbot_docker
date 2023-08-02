@@ -30,6 +30,16 @@ server {
 
 ```
 
+## 防火牆設定
+
+```
+sudo ufw status numbered
+sudo ufw allow 22/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+sudo ufw enable
+```
+
 ## SSL
 
 1. 安裝 certbot `sh certbot_install.sh`
