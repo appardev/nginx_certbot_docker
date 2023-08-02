@@ -32,7 +32,9 @@ server {
 
 ## SSL
 
-確保 `/etc/nginx/conf.d/fullchain.pem` 和 `/etc/nginx/conf.d/privkey.pem` 有檔案
+1. 安裝 certbot `sh certbot_install.sh`
+2. 執行 `sudo certbot certonly --standalone -d <domain>`
+3. `cp /etc/letsencrypt/live/asum.appar.dev/fullchain.pem ./nginx_conf` && `cp /etc/letsencrypt/live/asum.appar.dev/privkey.pem ./nginx_conf`。確保 `/etc/nginx/conf.d/fullchain.pem` 和 `/etc/nginx/conf.d/privkey.pem` 有檔案
 
 ## 啟動服務
 
