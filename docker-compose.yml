@@ -3,10 +3,12 @@ services:
   certbot:
     image: certbot/certbot
     container_name: certbot
+    network_mode: "host"
     volumes:
       - ./letsencrypt:/etc/letsencrypt
       - ./nginx_conf:/data/nginx
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+    # Comment out the entrypoint for initial certificate generation.
+    # entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
 
   nginx:
     image: nginx:1.13
