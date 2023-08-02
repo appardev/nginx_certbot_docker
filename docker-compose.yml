@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:1.13
+    network_mode: "host"
+    restart: always
+    container_name: nginx
+    volumes:
+      - ./nginx_conf/:/etc/nginx/conf.d
+      # - static:/static
+      # - ./media:/media
+volumes:
+  static:
+  redisdata:
