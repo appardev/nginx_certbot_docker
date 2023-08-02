@@ -1,6 +1,9 @@
 # Nginx Docker Setup with Environment Variable Substitution
 
-此專案使用 Docker 和 Nginx 來建立一個支援環境變數替換的網頁伺服器。
+此專案旨在快速建立一個 https 伺服器
+1. 本地安裝 docker
+2. 本地安裝 certbot
+3. 起一個 nginx 伺服器
 
 ## 開始之前
 
