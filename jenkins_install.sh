@@ -7,12 +7,16 @@ sudo apt upgrade -y
 # Install Java
 sudo apt install openjdk-11-jdk -y
 
-# Add Jenkins Repository
+# Add Jenkins Repository Key
 wget -q -O - https://pkg.jenkins.io/debian/jenkins.io.key | sudo apt-key add -
-sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+# Add Jenkins Repository
+sudo sh -c 'echo deb http://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+# Update again to fetch Jenkins package information
+sudo apt update
 
 # Install Jenkins
-sudo apt update
 sudo apt install jenkins -y
 
 # Start and Enable Jenkins
