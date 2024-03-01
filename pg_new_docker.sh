@@ -45,7 +45,7 @@ read -p "Please enter the PostgreSQL version (default 12.9): " postgresql_versio
 postgresql_version=${postgresql_version:-12.9}
 
 # Run the Docker command
-sudo docker run --name $docker_container_name -p $external_port:5432 -e POSTGRES_USER=$user -e POSTGRES_PASSWORD=$password -e POSTGRES_DB=$db_name -d postgres:$postgresql_version
+sudo docker run --name $docker_container_name -p $external_port:5432 -e POSTGRES_USER=$user -e POSTGRES_PASSWORD=$password -e POSTGRES_DB=$db_name -d -v ~/pgdata/$docker_container_name:/var/lib/postgresql/data postgres:$postgresql_version
 
 echo "PostgreSQL container has been successfully set up!"
 
