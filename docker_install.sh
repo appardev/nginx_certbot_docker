@@ -27,10 +27,10 @@ sudo systemctl enable docker
 sudo usermod -aG docker $USER
 
 # Install Docker Compose
-sudo curl -L "https://github.com/docker/compose/releases/download/latest/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# Set execute permission to the Docker Compose binary
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+
+# if failed, uninstall and reinstall, `sudo rm /usr/local/bin/docker-compose`
 
 # Print Docker and Docker Compose versions
 docker --version
