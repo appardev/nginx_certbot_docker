@@ -9,7 +9,7 @@ read -p "Please enter the environment (e.g. beta/alpha/beta_clone/prod_230906): 
 # Ask for other notes (optional)
 read -p "Please enter any other notes (optional): " other_note
 
-read -p "Custom db name (press enter if want to auth generate): " custom_db_name
+read -p "Custom db name (press enter if want to auto generate): " custom_db_name
 
 # Construct the database name
 db_name="${project_code}_${env}_db"
